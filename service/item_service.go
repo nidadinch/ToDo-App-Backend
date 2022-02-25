@@ -13,7 +13,14 @@ type ItemService struct {
 }
 
 func (s *ItemService) Items() (*model.ItemsResponse, error) {
-	return nil, nil
+	items, err := s.Repository.GetAllItems()
+	m := model.ItemsResponse{}
+
+	for _, v := range items {
+		m[v.Id] = v.Text
+	}
+
+	return &m, err
 }
 
 func NewItemService(repository repository.IItem) IItemService {
