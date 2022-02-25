@@ -7,6 +7,7 @@ import (
 
 type IItemService interface {
 	Items() (*model.ItemsResponse, error)
+	Add(text string) (*model.ItemsResponse, error)
 }
 type ItemService struct {
 	Repository repository.IItem
@@ -21,6 +22,10 @@ func (s *ItemService) Items() (*model.ItemsResponse, error) {
 	}
 
 	return &m, err
+}
+
+func (s *ItemService) Add(text string) (*model.ItemsResponse, error) {
+	return nil, nil
 }
 
 func NewItemService(repository repository.IItem) IItemService {
