@@ -11,6 +11,7 @@ type Item struct {
 type IItem interface {
 	NewItem(item *model.Item)
 	GetAllItems() ([]*model.Item, error)
+	Get(id int) (*model.Item, error)
 }
 
 func (i *Item) NewItem(item *model.Item) {
@@ -19,6 +20,11 @@ func (i *Item) NewItem(item *model.Item) {
 
 func (i *Item) GetAllItems() ([]*model.Item, error) {
 	return i.items, nil
+}
+
+func (i *Item) Get(id int) (*model.Item, error) {
+	empty := &model.Item{}
+	return empty, nil
 }
 
 func NewItemRepository() IItem {
