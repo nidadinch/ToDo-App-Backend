@@ -18,7 +18,7 @@ func (i *Item) NewItem(item *model.Item) {
 }
 
 func (i *Item) GetAllItems() ([]*model.Item, error) {
-	return nil, nil
+	return i.items, nil
 }
 
 func NewItemRepository() IItem {
