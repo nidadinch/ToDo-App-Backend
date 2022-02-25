@@ -34,7 +34,8 @@ func (i *Item) Get(id int) (*model.Item, error) {
 }
 
 func (i *Item) Add(item *model.Item) (*model.Item, error) {
-	return nil, nil
+	i.items = append(i.items, item)
+	return i.Get(item.Id)
 }
 
 func NewItemRepository() IItem {
