@@ -56,7 +56,7 @@ func Test_Add(t *testing.T) {
 		mockRepo.EXPECT().Add(mockItem2).Return(mockItem2, nil)
 
 		itemService := service.NewItemService(mockRepo)
-		item, err := itemService.Add(text)
+		item, err := itemService.Add(text2)
 
 		assert.Equal(t, &model.ItemsResponse{2: text2}, item)
 		assert.Nil(t, err)

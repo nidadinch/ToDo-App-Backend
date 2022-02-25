@@ -25,7 +25,15 @@ func (s *ItemService) Items() (*model.ItemsResponse, error) {
 }
 
 func (s *ItemService) Add(text string) (*model.ItemsResponse, error) {
-	return nil, nil
+	items, _ := s.Repository.GetAllItems()
+	itemId := len(items) + 1
+	itemToAdd := &model.Item{Id: itemId, Text: text}
+	item, err := s.Repository.Add(itemToAdd)
+
+	m := model.ItemsResponse{}
+	m[item.Id] = item.Text
+
+	return &m, err
 }
 
 func NewItemService(repository repository.IItem) IItemService {
