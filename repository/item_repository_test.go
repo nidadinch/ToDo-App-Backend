@@ -48,6 +48,20 @@ func Test_GettItem(t *testing.T) {
 	})
 }
 
+func Test_AddItem(t *testing.T) {
+	t.Run("should add item successfully", func(t *testing.T) {
+		itemsRepo, _ := prepareForTest()
+		item := &model.Item{
+			Id:   3,
+			Text: "go to gym",
+		}
+		itemsRepo.NewItem(item)
+		got, err := itemsRepo.Add(item)
+		assert.Nil(t, err)
+		assert.Equal(t, got, item)
+	})
+}
+
 func prepareForTest() (repository.IItem, []*model.Item) {
 	items := []*model.Item{
 		{

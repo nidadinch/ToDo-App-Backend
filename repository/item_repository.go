@@ -12,6 +12,7 @@ type IItem interface {
 	NewItem(item *model.Item)
 	GetAllItems() ([]*model.Item, error)
 	Get(id int) (*model.Item, error)
+	Add(*model.Item) (*model.Item, error)
 }
 
 func (i *Item) NewItem(item *model.Item) {
@@ -30,6 +31,10 @@ func (i *Item) Get(id int) (*model.Item, error) {
 	}
 	empty := &model.Item{}
 	return empty, nil
+}
+
+func (i *Item) Add(item *model.Item) (*model.Item, error) {
+	return nil, nil
 }
 
 func NewItemRepository() IItem {
