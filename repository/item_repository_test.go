@@ -11,22 +11,7 @@ import (
 
 func Test_GetAllItems(t *testing.T) {
 	t.Run("should return all items correctly", func(t *testing.T) {
-		items := []*model.Item{
-			{
-				Id:   1,
-				Text: "practice go",
-			},
-			{
-				Id:   2,
-				Text: "buy some cheese",
-			},
-		}
-		// Create repository
-		itemsRepo := repository.NewItemRepository()
-		// Append items to repository
-		for _, s := range items {
-			itemsRepo.NewItem(s)
-		}
+		itemsRepo, items := prepareForTest()
 		want := items
 		got, err := itemsRepo.GetAllItems()
 		assert.Nil(t, err)
@@ -48,47 +33,38 @@ func Test_GetAllItems(t *testing.T) {
 
 func Test_GettItem(t *testing.T) {
 	t.Run("should get item successfully", func(t *testing.T) {
-		items := []*model.Item{
-			{
-				Id:   1,
-				Text: "practice go",
-			},
-			{
-				Id:   2,
-				Text: "buy some cheese",
-			},
-		}
-		// Create repository
-		itemsRepo := repository.NewItemRepository()
-		// Append items to repository
-		for _, s := range items {
-			itemsRepo.NewItem(s)
-		}
+		itemsRepo, items := prepareForTest()
 		want := items[0]
 		got, err := itemsRepo.Get(items[0].Id)
 		assert.Nil(t, err)
 		assert.Equal(t, got, want)
 	})
 	t.Run("should return empty item if item doesnt exist with provided id", func(t *testing.T) {
-		items := []*model.Item{
-			{
-				Id:   1,
-				Text: "practice go",
-			},
-			{
-				Id:   2,
-				Text: "buy some cheese",
-			},
-		}
-		// Create repository
-		itemsRepo := repository.NewItemRepository()
-		// Append items to repository
-		for _, s := range items {
-			itemsRepo.NewItem(s)
-		}
+		itemsRepo, _ := prepareForTest()
 		want := &model.Item{}
 		got, err := itemsRepo.Get(3)
 		assert.Nil(t, err)
 		assert.Equal(t, got, want)
 	})
+}
+
+func prepareForTest() (repository.IItem, []*model.Item) {
+	items := []*model.Item{
+		{
+			Id:   1,
+			Text: "practice go",
+		},
+		{
+			Id:   2,
+			Text: "buy some cheese",
+		},
+	}
+	// Create repository
+	itemsRepo := repository.NewItemRepository()
+	// Append items to repository
+	for _, s := range items {
+		itemsRepo.NewItem(s)
+	}
+
+	return itemsRepo, items
 }

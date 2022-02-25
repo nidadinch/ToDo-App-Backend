@@ -23,6 +23,11 @@ func (i *Item) GetAllItems() ([]*model.Item, error) {
 }
 
 func (i *Item) Get(id int) (*model.Item, error) {
+	for _, item := range i.items {
+		if item.Id == id {
+			return item, nil
+		}
+	}
 	empty := &model.Item{}
 	return empty, nil
 }
