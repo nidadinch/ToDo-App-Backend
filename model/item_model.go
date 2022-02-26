@@ -5,4 +5,8 @@ type Item struct {
 	Text string `json:"text"`
 }
 
-type ItemsResponse map[int]string
+type ItemsResponse []Item
+
+type ItemAddRequest struct {
+	Text string `json:"text"`
+}

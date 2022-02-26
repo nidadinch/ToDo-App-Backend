@@ -18,9 +18,8 @@ func (s *ItemService) Items() (*model.ItemsResponse, error) {
 	m := model.ItemsResponse{}
 
 	for _, v := range items {
-		m[v.Id] = v.Text
+		m = append(m, *v)
 	}
-
 	return &m, err
 }
 
@@ -31,7 +30,7 @@ func (s *ItemService) Add(text string) (*model.ItemsResponse, error) {
 	item, err := s.Repository.Add(itemToAdd)
 
 	m := model.ItemsResponse{}
-	m[item.Id] = item.Text
+	m = append(m, *item)
 
 	return &m, err
 }

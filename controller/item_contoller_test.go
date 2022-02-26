@@ -8,6 +8,7 @@ import (
 	"errors"
 	"net/http"
 	"net/http/httptest"
+	"strings"
 	"testing"
 
 	"github.com/golang/mock/gomock"
@@ -17,7 +18,7 @@ import (
 func Test_GetAll(t *testing.T) {
 	t.Run("should return items correctly", func(t *testing.T) {
 		service := mock.NewMockIItemService(gomock.NewController(t))
-		serviceReturn := &model.ItemsResponse{1: "buy some milk", 2: "go to gym"}
+		serviceReturn := &model.ItemsResponse{{Id: 1, Text: "buy some milk"}, {Id: 2, Text: "go to gym"}}
 
 		service.EXPECT().Items().Return(serviceReturn, nil)
 		controller := controller.NewItemController(service)
@@ -51,13 +52,15 @@ func Test_GetAll(t *testing.T) {
 func Test_Add(t *testing.T) {
 	t.Run("should add new item successfully", func(t *testing.T) {
 		service := mock.NewMockIItemService(gomock.NewController(t))
-		serviceReturn := &model.ItemsResponse{1: "buy some milk"}
+		serviceReturn := &model.ItemsResponse{{Id: 1, Text: "buy some milk"}}
 
 		service.EXPECT().Add("buy some milk").Return(serviceReturn, nil)
 		controller := controller.NewItemController(service)
 
-		r := httptest.NewRequest(http.MethodPost, "/item", nil)
 		w := httptest.NewRecorder()
+		bodyReader := strings.NewReader(`{"text": "buy some milk"}`)
+		r := httptest.NewRequest(http.MethodPost, "/item", bodyReader)
+
 		controller.Handle(w, r)
 
 		resBody, _ := json.Marshal(serviceReturn)
@@ -73,7 +76,8 @@ func Test_Add(t *testing.T) {
 		service.EXPECT().Add("buy some milk").Return(nil, serviceErr)
 		controller := controller.NewItemController(service)
 
-		r := httptest.NewRequest(http.MethodGet, "/items", nil)
+		bodyReader := strings.NewReader(`{"text": "buy some milk"}`)
+		r := httptest.NewRequest(http.MethodPost, "/item", bodyReader)
 		w := httptest.NewRecorder()
 		controller.Handle(w, r)
 

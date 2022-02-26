@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"backend/model"
 	"backend/service"
 	"encoding/json"
 	"net/http"
@@ -47,7 +48,26 @@ func (c *ItemController) GetAll(w http.ResponseWriter, r *http.Request) {
 	w.Write(json)
 }
 func (c *ItemController) Add(w http.ResponseWriter, r *http.Request) {
+	// parse json body
+	decoder := json.NewDecoder(r.Body)
+	req := &model.ItemAddRequest{}
+	decoder.Decode(req)
 
+	response, err := c.service.Add(req.Text)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		w.Write([]byte(err.Error()))
+		return
+	}
+	json, err := json.Marshal(response)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		w.Write([]byte(err.Error()))
+		return
+	}
+
+	w.Header().Add("content-type", "application/json")
+	w.Write(json)
 }
 
 func NewItemController(service service.IItemService) IItemController {
