@@ -67,6 +67,17 @@ func Test_Add(t *testing.T) {
 		assert.Equal(t, "application/json", w.Header().Get("content-type"))
 	})
 	t.Run("should return error if service fails", func(t *testing.T) {
+		service := mock.NewMockIItemService(gomock.NewController(t))
+		serviceErr := errors.New("test err")
 
+		service.EXPECT().Add("buy some milk").Return(nil, serviceErr)
+		controller := controller.NewItemController(service)
+
+		r := httptest.NewRequest(http.MethodGet, "/items", nil)
+		w := httptest.NewRecorder()
+		controller.Handle(w, r)
+
+		assert.Equal(t, w.Result().StatusCode, http.StatusInternalServerError)
+		assert.Equal(t, w.Body.String(), serviceErr.Error())
 	})
 }
