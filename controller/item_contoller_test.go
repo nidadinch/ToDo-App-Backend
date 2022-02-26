@@ -26,10 +26,9 @@ func Test_GetAll(t *testing.T) {
 		w := httptest.NewRecorder()
 		controller.Handle(w, r)
 
-		actual := serviceReturn
-		json.Unmarshal(w.Body.Bytes(), actual)
+		resBody, _ := json.Marshal(serviceReturn)
 
-		assert.Equal(t, serviceReturn, actual)
+		assert.Equal(t, string(resBody), w.Body.String())
 		assert.Equal(t, w.Result().StatusCode, http.StatusOK)
 		assert.Equal(t, "application/json", w.Header().Get("content-type"))
 	})
@@ -46,5 +45,28 @@ func Test_GetAll(t *testing.T) {
 
 		assert.Equal(t, w.Result().StatusCode, http.StatusInternalServerError)
 		assert.Equal(t, w.Body.String(), serviceErr.Error())
+	})
+}
+
+func Test_Add(t *testing.T) {
+	t.Run("should add new item successfully", func(t *testing.T) {
+		service := mock.NewMockIItemService(gomock.NewController(t))
+		serviceReturn := &model.ItemsResponse{1: "buy some milk"}
+
+		service.EXPECT().Add("buy some milk").Return(serviceReturn, nil)
+		controller := controller.NewItemController(service)
+
+		r := httptest.NewRequest(http.MethodPost, "/item", nil)
+		w := httptest.NewRecorder()
+		controller.Handle(w, r)
+
+		resBody, _ := json.Marshal(serviceReturn)
+
+		assert.Equal(t, string(resBody), w.Body.String())
+		assert.Equal(t, w.Result().StatusCode, http.StatusOK)
+		assert.Equal(t, "application/json", w.Header().Get("content-type"))
+	})
+	t.Run("should return error if service fails", func(t *testing.T) {
+
 	})
 }
