@@ -18,6 +18,10 @@ type ItemController struct {
 }
 
 func (c *ItemController) Handle(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS, post, get")
+	w.Header().Set("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token")
+
 	switch r.Method {
 	case http.MethodGet:
 		if r.URL.Path == "/items" {
