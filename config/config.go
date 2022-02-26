@@ -10,7 +10,7 @@ import (
 )
 
 type Config struct {
-	ServerAddr string `json:"serverAddr"`
+	ServerAddr int `json:"serverAddr"`
 }
 
 var c = &Config{}

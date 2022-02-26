@@ -27,9 +27,10 @@ func Test_GetAll(t *testing.T) {
 		w := httptest.NewRecorder()
 		controller.Handle(w, r)
 
-		resBody, _ := json.Marshal(serviceReturn)
+		actual := serviceReturn
+		json.Unmarshal(w.Body.Bytes(), actual)
 
-		assert.Equal(t, string(resBody), w.Body.String())
+		assert.Equal(t, serviceReturn, actual)
 		assert.Equal(t, w.Result().StatusCode, http.StatusOK)
 		assert.Equal(t, "application/json", w.Header().Get("content-type"))
 	})
@@ -63,9 +64,10 @@ func Test_Add(t *testing.T) {
 
 		controller.Handle(w, r)
 
-		resBody, _ := json.Marshal(serviceReturn)
+		actual := serviceReturn
+		json.Unmarshal(w.Body.Bytes(), actual)
 
-		assert.Equal(t, string(resBody), w.Body.String())
+		assert.Equal(t, serviceReturn, actual)
 		assert.Equal(t, w.Result().StatusCode, http.StatusOK)
 		assert.Equal(t, "application/json", w.Header().Get("content-type"))
 	})

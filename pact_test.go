@@ -1,13 +1,19 @@
-package pacttest
+package main
 
 import (
+	"backend/server"
 	"net/http"
 	"testing"
 
 	"github.com/pact-foundation/pact-go/dsl"
+	"github.com/pact-foundation/pact-go/utils"
 )
 
 func createPact() (pact *dsl.Pact) {
+	port, _ := utils.GetFreePort()
+	server := server.NewServer()
+	server.StartServer(port)
+
 	pact = &dsl.Pact{
 		Consumer: "FrontEnd",
 		Provider: "Backend",
