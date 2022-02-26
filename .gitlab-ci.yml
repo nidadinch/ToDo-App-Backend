@@ -1,14 +1,14 @@
-image: golang:1.17-alpine
-
 stages:
   - test
   - build
+  - deploy
 
 variables:
   BIN_NAME: to-do-app-backend
   GO_PROJECT: gitlab.comnidadinch/to-do-app-backend
 
 test:
+  image: golang:1.17-alpine
   stage: test
   before_script:
     - apk add build-base
