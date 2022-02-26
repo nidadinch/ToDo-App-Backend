@@ -6,20 +6,19 @@ stages:
 
 variables:
   BIN_NAME: to-do-app-backend
-  ARTIFACTS_DIR: artifacts
   GO_PROJECT: gitlab.comnidadinch/to-do-app-backend
 
 before_script:
   - mkdir -p ${GOPATH}/src/${GO_PROJECT}
-  - mkdir -p ${CI_PROJECT_DIR}/${ARTIFACTS_DIR}
   - cp -r ${CI_PROJECT_DIR}/* ${GOPATH}/src/${GO_PROJECT}/
   - cd ${GOPATH}/src/${GO_PROJECT}
 
 test:
   stage: test
   script:
-    - go mod download
-    - go test -v -cover ./...
+    - go fmt $(go list ./... | grep -v /vendor/)
+    - go vet $(go list ./... | grep -v /vendor/)
+    - go test -race $(go list ./... | grep -v /vendor/)
 
 build:
   stage: build
