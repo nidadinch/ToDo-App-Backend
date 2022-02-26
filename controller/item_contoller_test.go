@@ -5,6 +5,7 @@ import (
 	"backend/mock"
 	"backend/model"
 	"encoding/json"
+	"errors"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -31,5 +32,19 @@ func Test_GetAll(t *testing.T) {
 		assert.Equal(t, serviceReturn, actual)
 		assert.Equal(t, w.Result().StatusCode, http.StatusOK)
 		assert.Equal(t, "application/json", w.Header().Get("content-type"))
+	})
+	t.Run("should return error if service fails", func(t *testing.T) {
+		service := mock.NewMockIItemService(gomock.NewController(t))
+		serviceErr := errors.New("test err")
+
+		service.EXPECT().Items().Return(nil, serviceErr)
+		controller := controller.NewItemController(service)
+
+		r := httptest.NewRequest(http.MethodGet, "/items", nil)
+		w := httptest.NewRecorder()
+		controller.Handle(w, r)
+
+		assert.Equal(t, w.Result().StatusCode, http.StatusInternalServerError)
+		assert.Equal(t, w.Body.String(), serviceErr.Error())
 	})
 }
