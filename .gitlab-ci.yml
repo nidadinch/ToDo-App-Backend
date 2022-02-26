@@ -18,7 +18,6 @@ before_script:
 test:
   stage: test
   script:
-    - dep ensure
     - go test -v -cover ./...
 
 build:
