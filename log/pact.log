@@ -119,3 +119,13 @@ I, [2022-02-26T22:10:56.138811 #40800]  INFO -- : Sending POST request to path: 
 D, [2022-02-26T22:10:56.138890 #40800] DEBUG -- : body :{"text":"buy some milk"}
 I, [2022-02-26T22:10:56.141815 #40800]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"31", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 19:10:56 GMT"}, see debug logs for body
 D, [2022-02-26T22:10:56.141878 #40800] DEBUG -- : body: {"id":1,"text":"buy some milk"}
+I, [2022-02-26T23:34:06.239574 #43646]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given get todo list successfully a request for todo list with GET /items returns a response which has status code 200'
+I, [2022-02-26T23:34:06.239897 #43646]  INFO -- : Sending GET request to path: "/items" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"get todo list successfully"}]}, see debug logs for body
+D, [2022-02-26T23:34:06.239949 #43646] DEBUG -- : body :
+I, [2022-02-26T23:34:06.262902 #43646]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"2", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 20:34:06 GMT"}, see debug logs for body
+D, [2022-02-26T23:34:06.262989 #43646] DEBUG -- : body: []
+I, [2022-02-26T23:34:06.266935 #43646]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given add todo item successfully a request for adding todo list item with POST /item returns a response which has status code 200'
+I, [2022-02-26T23:34:06.267130 #43646]  INFO -- : Sending POST request to path: "/item" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"add todo item successfully"}]}, see debug logs for body
+D, [2022-02-26T23:34:06.267181 #43646] DEBUG -- : body :{"text":"buy some milk"}
+I, [2022-02-26T23:34:06.270011 #43646]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"31", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 20:34:06 GMT"}, see debug logs for body
+D, [2022-02-26T23:34:06.270075 #43646] DEBUG -- : body: {"id":1,"text":"buy some milk"}

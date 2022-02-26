@@ -1,7 +1,6 @@
 package main
 
 import (
-	"backend/config"
 	"backend/server"
 	"fmt"
 	"testing"
@@ -13,7 +12,7 @@ import (
 func TestProvider(t *testing.T) {
 
 	server := server.NewServer()
-	go server.StartServer(config.Get().ServerAddr)
+	go server.StartServer(3000)
 
 	pact := &dsl.Pact{
 		Host:                     "127.0.0.1",
@@ -23,7 +22,7 @@ func TestProvider(t *testing.T) {
 	}
 
 	request := types.VerifyRequest{
-		ProviderBaseURL: fmt.Sprintf("http://localhost:%d", config.Get().ServerAddr),
+		ProviderBaseURL: fmt.Sprintf("http://localhost:%d", 3000),
 		PactURLs:        []string{"/Users/nidadinc/Desktop/Assignment/to-do-app-frontend/pact/pacts/frontend-backend.json"},
 	}
 	verifyResponse, err := pact.VerifyProvider(t, request)
