@@ -3,17 +3,16 @@ stages:
   - build
 
 before_script:
-  - chmod +x ./docker_install.sh > /dev/null
   - mkdir -p /go/src/gitlab.com/nidadinch /go/src/_/builds
   - cp -r $CI_PROJECT_DIR /go/src/gitlab.com/nidadinch/to-do-app-backend
   - ln -s /go/src/gitlab.com/nidadinch /go/src/_/builds/nidadinch
-  - make dep
 
 test:
   stage: test
   image: golang:1.10-alpine3.7
   script:
-    - make test
+    - go get -v -d ./...
+    - go test ./...
 
 build:
   stage: build
