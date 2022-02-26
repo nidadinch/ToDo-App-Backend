@@ -3,6 +3,7 @@ stages:
   - build
 
 before_script:
+  - chmod +x ./docker_install.sh > /dev/null
   - mkdir -p /go/src/gitlab.com/nidadinch /go/src/_/builds
   - cp -r $CI_PROJECT_DIR /go/src/gitlab.com/nidadinch/to-do-app-backend
   - ln -s /go/src/gitlab.com/nidadinch /go/src/_/builds/nidadinch
