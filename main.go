@@ -1,16 +1,14 @@
 package main
 
 import (
-	"backend/config"
 	"backend/server"
 
 	"log"
 )
 
 func main() {
-	config := config.Get()
 
-	err := server.NewServer().StartServer(config.ServerAddr)
+	err := server.NewServer().StartServer(3000)
 	if err != nil {
 		log.Fatalln(err)
 	}
