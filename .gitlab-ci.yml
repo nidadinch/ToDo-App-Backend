@@ -6,6 +6,9 @@ test:
   stage: test
   image: golang:1.10-alpine3.7
   script:
+    - go.mod .
+    - go.sum .
+    - go mod download
     - go test ./...
 
 build:
