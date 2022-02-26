@@ -1,0 +1,121 @@
+# Logfile created on 2022-02-26 21:44:58 +0300 by logger.rb/47272
+I, [2022-02-26T21:44:58.562443 #39075]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given get todo list successfully a request for todo list with GET /items returns a response which has status code 200'
+I, [2022-02-26T21:44:58.562672 #39075]  INFO -- : Sending GET request to path: "/items" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"get todo list successfully"}]}, see debug logs for body
+D, [2022-02-26T21:44:58.562717 #39075] DEBUG -- : body :
+I, [2022-02-26T21:44:58.583424 #39075]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"2", "Content-Type"=>"application/json", "Date"=>"Sat, 26 Feb 2022 18:44:58 GMT"}, see debug logs for body
+D, [2022-02-26T21:44:58.583513 #39075] DEBUG -- : body: []
+I, [2022-02-26T21:44:58.588403 #39075]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given add todo item successfully a request for adding todo list item with POST /item returns a response which has status code 200'
+I, [2022-02-26T21:44:58.588553 #39075]  INFO -- : Sending POST request to path: "/item" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"add todo item successfully"}]}, see debug logs for body
+D, [2022-02-26T21:44:58.588594 #39075] DEBUG -- : body :{"text":"buy some milk"}
+I, [2022-02-26T21:44:58.596878 #39075]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"31", "Content-Type"=>"application/json", "Date"=>"Sat, 26 Feb 2022 18:44:58 GMT"}, see debug logs for body
+D, [2022-02-26T21:44:58.596955 #39075] DEBUG -- : body: {"id":1,"text":"buy some milk"}
+I, [2022-02-26T21:47:49.024511 #39179]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given get todo list successfully a request for todo list with GET /items returns a response which has status code 200'
+I, [2022-02-26T21:47:49.024807 #39179]  INFO -- : Sending GET request to path: "/items" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"get todo list successfully"}]}, see debug logs for body
+D, [2022-02-26T21:47:49.024845 #39179] DEBUG -- : body :
+I, [2022-02-26T21:47:49.041061 #39179]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"2", "Content-Type"=>"application/json", "Date"=>"Sat, 26 Feb 2022 18:47:49 GMT"}, see debug logs for body
+D, [2022-02-26T21:47:49.041162 #39179] DEBUG -- : body: []
+I, [2022-02-26T21:47:49.045411 #39179]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given add todo item successfully a request for adding todo list item with POST /item returns a response which has status code 200'
+I, [2022-02-26T21:47:49.045587 #39179]  INFO -- : Sending POST request to path: "/item" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"add todo item successfully"}]}, see debug logs for body
+D, [2022-02-26T21:47:49.045628 #39179] DEBUG -- : body :{"text":"buy some milk"}
+I, [2022-02-26T21:47:49.048796 #39179]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"31", "Content-Type"=>"application/json", "Date"=>"Sat, 26 Feb 2022 18:47:49 GMT"}, see debug logs for body
+D, [2022-02-26T21:47:49.048862 #39179] DEBUG -- : body: {"id":1,"text":"buy some milk"}
+I, [2022-02-26T21:51:42.662569 #39343]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given get todo list successfully a request for todo list with GET /items returns a response which has status code 200'
+I, [2022-02-26T21:51:42.666299 #39343]  INFO -- : Sending GET request to path: "/items" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"get todo list successfully"}]}, see debug logs for body
+D, [2022-02-26T21:51:42.666804 #39343] DEBUG -- : body :
+I, [2022-02-26T21:51:42.741376 #39343]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"2", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 18:51:42 GMT"}, see debug logs for body
+D, [2022-02-26T21:51:42.741794 #39343] DEBUG -- : body: []
+I, [2022-02-26T21:51:42.751202 #39343]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given add todo item successfully a request for adding todo list item with POST /item returns a response which has status code 200'
+I, [2022-02-26T21:51:42.751412 #39343]  INFO -- : Sending POST request to path: "/item" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"add todo item successfully"}]}, see debug logs for body
+D, [2022-02-26T21:51:42.751468 #39343] DEBUG -- : body :{"text":"buy some milk"}
+I, [2022-02-26T21:51:42.756625 #39343]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"31", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 18:51:42 GMT"}, see debug logs for body
+D, [2022-02-26T21:51:42.756695 #39343] DEBUG -- : body: {"id":1,"text":"buy some milk"}
+I, [2022-02-26T21:52:26.762638 #39509]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given get todo list successfully a request for todo list with GET /items returns a response which has status code 200'
+I, [2022-02-26T21:52:26.763412 #39509]  INFO -- : Sending GET request to path: "/items" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"get todo list successfully"}]}, see debug logs for body
+D, [2022-02-26T21:52:26.763520 #39509] DEBUG -- : body :
+I, [2022-02-26T21:52:26.783912 #39509]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"2", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 18:52:26 GMT"}, see debug logs for body
+D, [2022-02-26T21:52:26.784006 #39509] DEBUG -- : body: []
+I, [2022-02-26T21:52:26.790029 #39509]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given add todo item successfully a request for adding todo list item with POST /item returns a response which has status code 200'
+I, [2022-02-26T21:52:26.790201 #39509]  INFO -- : Sending POST request to path: "/item" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"add todo item successfully"}]}, see debug logs for body
+D, [2022-02-26T21:52:26.790244 #39509] DEBUG -- : body :{"text":"buy some milk"}
+I, [2022-02-26T21:52:26.793897 #39509]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"31", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 18:52:26 GMT"}, see debug logs for body
+D, [2022-02-26T21:52:26.794156 #39509] DEBUG -- : body: {"id":1,"text":"buy some milk"}
+I, [2022-02-26T21:57:17.112421 #39709]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given get todo list successfully a request for todo list with GET /items returns a response which has status code 200'
+I, [2022-02-26T21:57:17.112788 #39709]  INFO -- : Sending GET request to path: "/items" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"get todo list successfully"}]}, see debug logs for body
+D, [2022-02-26T21:57:17.112828 #39709] DEBUG -- : body :
+I, [2022-02-26T21:57:17.132448 #39709]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"2", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 18:57:17 GMT"}, see debug logs for body
+D, [2022-02-26T21:57:17.132530 #39709] DEBUG -- : body: []
+I, [2022-02-26T21:57:17.137605 #39709]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given add todo item successfully a request for adding todo list item with POST /item returns a response which has status code 200'
+I, [2022-02-26T21:57:17.137773 #39709]  INFO -- : Sending POST request to path: "/item" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"add todo item successfully"}]}, see debug logs for body
+D, [2022-02-26T21:57:17.137824 #39709] DEBUG -- : body :{"text":"buy some milk"}
+I, [2022-02-26T21:57:17.141545 #39709]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"31", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 18:57:17 GMT"}, see debug logs for body
+D, [2022-02-26T21:57:17.141637 #39709] DEBUG -- : body: {"id":1,"text":"buy some milk"}
+I, [2022-02-26T21:58:41.684001 #39821]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given get todo list successfully a request for todo list with GET /items returns a response which has status code 200'
+I, [2022-02-26T21:58:41.684370 #39821]  INFO -- : Sending GET request to path: "/items" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"get todo list successfully"}]}, see debug logs for body
+D, [2022-02-26T21:58:41.684427 #39821] DEBUG -- : body :
+I, [2022-02-26T21:58:41.708676 #39821]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"2", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 18:58:41 GMT"}, see debug logs for body
+D, [2022-02-26T21:58:41.708894 #39821] DEBUG -- : body: []
+I, [2022-02-26T21:58:41.713952 #39821]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given add todo item successfully a request for adding todo list item with POST /item returns a response which has status code 200'
+I, [2022-02-26T21:58:41.714131 #39821]  INFO -- : Sending POST request to path: "/item" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"add todo item successfully"}]}, see debug logs for body
+D, [2022-02-26T21:58:41.714173 #39821] DEBUG -- : body :{"text":"buy some milk"}
+I, [2022-02-26T21:58:41.716813 #39821]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"31", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 18:58:41 GMT"}, see debug logs for body
+D, [2022-02-26T21:58:41.716889 #39821] DEBUG -- : body: {"id":1,"text":"buy some milk"}
+I, [2022-02-26T22:05:06.229184 #40109]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given get todo list successfully a request for todo list with GET /items returns a response which has status code 200'
+I, [2022-02-26T22:05:06.229512 #40109]  INFO -- : Sending GET request to path: "/items" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"get todo list successfully"}]}, see debug logs for body
+D, [2022-02-26T22:05:06.229578 #40109] DEBUG -- : body :
+I, [2022-02-26T22:05:06.251924 #40109]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"33", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 19:05:06 GMT"}, see debug logs for body
+D, [2022-02-26T22:05:06.252003 #40109] DEBUG -- : body: [{"id":1,"text":"buy some milk"}]
+I, [2022-02-26T22:05:06.254038 #40109]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given add todo item successfully a request for adding todo list item with POST /item returns a response which has status code 200'
+I, [2022-02-26T22:05:06.254277 #40109]  INFO -- : Sending POST request to path: "/item" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"add todo item successfully"}]}, see debug logs for body
+D, [2022-02-26T22:05:06.254328 #40109] DEBUG -- : body :{"text":"buy some milk"}
+I, [2022-02-26T22:05:06.257534 #40109]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"31", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 19:05:06 GMT"}, see debug logs for body
+D, [2022-02-26T22:05:06.257590 #40109] DEBUG -- : body: {"id":2,"text":"buy some milk"}
+I, [2022-02-26T22:06:38.096512 #40216]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given get todo list successfully a request for todo list with GET /items returns a response which has status code 200'
+I, [2022-02-26T22:06:38.097262 #40216]  INFO -- : Sending GET request to path: "/items" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"get todo list successfully"}]}, see debug logs for body
+D, [2022-02-26T22:06:38.097380 #40216] DEBUG -- : body :
+I, [2022-02-26T22:06:38.123326 #40216]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"65", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 19:06:38 GMT"}, see debug logs for body
+D, [2022-02-26T22:06:38.123449 #40216] DEBUG -- : body: [{"id":1,"text":"buy some milk"},{"id":2,"text":"buy some milk"}]
+I, [2022-02-26T22:06:38.130779 #40216]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given add todo item successfully a request for adding todo list item with POST /item returns a response which has status code 200'
+I, [2022-02-26T22:06:38.131070 #40216]  INFO -- : Sending POST request to path: "/item" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"add todo item successfully"}]}, see debug logs for body
+D, [2022-02-26T22:06:38.131146 #40216] DEBUG -- : body :{"text":"buy some milk"}
+I, [2022-02-26T22:06:38.134895 #40216]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"31", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 19:06:38 GMT"}, see debug logs for body
+D, [2022-02-26T22:06:38.135101 #40216] DEBUG -- : body: {"id":3,"text":"buy some milk"}
+I, [2022-02-26T22:08:35.845281 #40358]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given get todo list successfully a request for todo list with GET /items returns a response which has status code 200'
+I, [2022-02-26T22:08:35.845647 #40358]  INFO -- : Sending GET request to path: "/items" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"get todo list successfully"}]}, see debug logs for body
+D, [2022-02-26T22:08:35.845708 #40358] DEBUG -- : body :
+I, [2022-02-26T22:08:35.866247 #40358]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"97", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 19:08:35 GMT"}, see debug logs for body
+D, [2022-02-26T22:08:35.866988 #40358] DEBUG -- : body: [{"id":1,"text":"buy some milk"},{"id":2,"text":"buy some milk"},{"id":3,"text":"buy some milk"}]
+I, [2022-02-26T22:08:35.882790 #40358]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given add todo item successfully a request for adding todo list item with POST /item returns a response which has status code 200'
+I, [2022-02-26T22:08:35.885721 #40358]  INFO -- : Sending POST request to path: "/item" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"add todo item successfully"}]}, see debug logs for body
+D, [2022-02-26T22:08:35.887111 #40358] DEBUG -- : body :{"text":"buy some milk"}
+I, [2022-02-26T22:08:35.891622 #40358]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"31", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 19:08:35 GMT"}, see debug logs for body
+D, [2022-02-26T22:08:35.891696 #40358] DEBUG -- : body: {"id":4,"text":"buy some milk"}
+I, [2022-02-26T22:09:25.328358 #40425]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given get todo list successfully a request for todo list with GET /items returns a response which has status code 200'
+I, [2022-02-26T22:09:25.328839 #40425]  INFO -- : Sending GET request to path: "/items" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"get todo list successfully"}]}, see debug logs for body
+D, [2022-02-26T22:09:25.328887 #40425] DEBUG -- : body :
+I, [2022-02-26T22:09:25.348920 #40425]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"2", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 19:09:25 GMT"}, see debug logs for body
+D, [2022-02-26T22:09:25.349015 #40425] DEBUG -- : body: []
+I, [2022-02-26T22:09:25.356265 #40425]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given add todo item successfully a request for adding todo list item with POST /item returns a response which has status code 200'
+I, [2022-02-26T22:09:25.356459 #40425]  INFO -- : Sending POST request to path: "/item" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"add todo item successfully"}]}, see debug logs for body
+D, [2022-02-26T22:09:25.356503 #40425] DEBUG -- : body :{"text":"buy some milk"}
+I, [2022-02-26T22:09:25.359614 #40425]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"31", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 19:09:25 GMT"}, see debug logs for body
+D, [2022-02-26T22:09:25.359690 #40425] DEBUG -- : body: {"id":1,"text":"buy some milk"}
+I, [2022-02-26T22:10:03.649441 #40509]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given get todo list successfully a request for todo list with GET /items returns a response which has status code 200'
+I, [2022-02-26T22:10:03.650018 #40509]  INFO -- : Sending GET request to path: "/items" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"get todo list successfully"}]}, see debug logs for body
+D, [2022-02-26T22:10:03.650103 #40509] DEBUG -- : body :
+I, [2022-02-26T22:10:03.671927 #40509]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"33", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 19:10:03 GMT"}, see debug logs for body
+D, [2022-02-26T22:10:03.672009 #40509] DEBUG -- : body: [{"id":1,"text":"buy some milk"}]
+I, [2022-02-26T22:10:03.674446 #40509]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given add todo item successfully a request for adding todo list item with POST /item returns a response which has status code 200'
+I, [2022-02-26T22:10:03.674633 #40509]  INFO -- : Sending POST request to path: "/item" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"add todo item successfully"}]}, see debug logs for body
+D, [2022-02-26T22:10:03.674673 #40509] DEBUG -- : body :{"text":"buy some milk"}
+I, [2022-02-26T22:10:03.677704 #40509]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"31", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 19:10:03 GMT"}, see debug logs for body
+D, [2022-02-26T22:10:03.677787 #40509] DEBUG -- : body: {"id":2,"text":"buy some milk"}
+I, [2022-02-26T22:10:56.101249 #40800]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given get todo list successfully a request for todo list with GET /items returns a response which has status code 200'
+I, [2022-02-26T22:10:56.101705 #40800]  INFO -- : Sending GET request to path: "/items" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"get todo list successfully"}]}, see debug logs for body
+D, [2022-02-26T22:10:56.101759 #40800] DEBUG -- : body :
+I, [2022-02-26T22:10:56.129940 #40800]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"2", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 19:10:56 GMT"}, see debug logs for body
+D, [2022-02-26T22:10:56.130045 #40800] DEBUG -- : body: []
+I, [2022-02-26T22:10:56.138558 #40800]  INFO -- : Running example 'Verifying a pact between FrontEnd and Backend Given add todo item successfully a request for adding todo list item with POST /item returns a response which has status code 200'
+I, [2022-02-26T22:10:56.138811 #40800]  INFO -- : Sending POST request to path: "/item" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"add todo item successfully"}]}, see debug logs for body
+D, [2022-02-26T22:10:56.138890 #40800] DEBUG -- : body :{"text":"buy some milk"}
+I, [2022-02-26T22:10:56.141815 #40800]  INFO -- : Received response with status: 200, headers: {"Access-Control-Allow-Headers"=>"Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods"=>"GET, PUT, POST, DELETE, OPTIONS, post, get", "Access-Control-Allow-Origin"=>"*", "Content-Length"=>"31", "Content-Type"=>"application/json; charset=UTF-8", "Date"=>"Sat, 26 Feb 2022 19:10:56 GMT"}, see debug logs for body
+D, [2022-02-26T22:10:56.141878 #40800] DEBUG -- : body: {"id":1,"text":"buy some milk"}

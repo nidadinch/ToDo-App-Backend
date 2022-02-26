@@ -32,7 +32,7 @@ func Test_GetAll(t *testing.T) {
 
 		assert.Equal(t, serviceReturn, actual)
 		assert.Equal(t, w.Result().StatusCode, http.StatusOK)
-		assert.Equal(t, "application/json", w.Header().Get("content-type"))
+		assert.Equal(t, "application/json; charset=UTF-8", w.Header().Get("content-type"))
 	})
 	t.Run("should return error if service fails", func(t *testing.T) {
 		service := mock.NewMockIItemService(gomock.NewController(t))
@@ -69,7 +69,7 @@ func Test_Add(t *testing.T) {
 
 		assert.Equal(t, serviceReturn, actual)
 		assert.Equal(t, w.Result().StatusCode, http.StatusOK)
-		assert.Equal(t, "application/json", w.Header().Get("content-type"))
+		assert.Equal(t, "application/json; charset=UTF-8", w.Header().Get("content-type"))
 	})
 	t.Run("should return error if service fails", func(t *testing.T) {
 		service := mock.NewMockIItemService(gomock.NewController(t))

@@ -48,7 +48,7 @@ func (c *ItemController) GetAll(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.Header().Add("content-type", "application/json")
+	w.Header().Add("content-type", "application/json; charset=UTF-8")
 	w.Write(json)
 }
 func (c *ItemController) Add(w http.ResponseWriter, r *http.Request) {
@@ -70,7 +70,7 @@ func (c *ItemController) Add(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.Header().Add("content-type", "application/json")
+	w.Header().Add("content-type", "application/json; charset=UTF-8")
 	w.Write(json)
 }
 
