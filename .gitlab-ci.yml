@@ -1,3 +1,5 @@
+image: golang:1.17-alpine3.7
+
 stages:
   - test
   - build
