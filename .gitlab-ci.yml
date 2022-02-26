@@ -4,7 +4,7 @@ stages:
 
 test:
   stage: test
-  script:
+  script: go test ./... -v
 
 build:
   stage: build
