@@ -53,7 +53,7 @@ func Test_GetAll(t *testing.T) {
 func Test_Add(t *testing.T) {
 	t.Run("should add new item successfully", func(t *testing.T) {
 		service := mock.NewMockIItemService(gomock.NewController(t))
-		serviceReturn := &model.ItemsResponse{{Id: 1, Text: "buy some milk"}}
+		serviceReturn := &model.Item{Id: 1, Text: "buy some milk"}
 
 		service.EXPECT().Add("buy some milk").Return(serviceReturn, nil)
 		controller := controller.NewItemController(service)

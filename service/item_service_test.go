@@ -42,7 +42,7 @@ func Test_Add(t *testing.T) {
 		itemService := service.NewItemService(mockRepo)
 		item, err := itemService.Add(text)
 
-		assert.Equal(t, &model.ItemsResponse{{Id: 1, Text: text}}, item)
+		assert.Equal(t, &model.Item{Id: 1, Text: text}, item)
 		assert.Nil(t, err)
 	})
 	t.Run("should add todo item with id = 2 when there is 1 item inside", func(t *testing.T) {
@@ -58,7 +58,7 @@ func Test_Add(t *testing.T) {
 		itemService := service.NewItemService(mockRepo)
 		item, err := itemService.Add(text2)
 
-		assert.Equal(t, &model.ItemsResponse{{Id: 2, Text: text2}}, item)
+		assert.Equal(t, &model.Item{Id: 2, Text: text2}, item)
 		assert.Nil(t, err)
 	})
 

@@ -35,10 +35,10 @@ func (m *MockIItemService) EXPECT() *MockIItemServiceMockRecorder {
 }
 
 // Add mocks base method.
-func (m *MockIItemService) Add(text string) (*model.ItemsResponse, error) {
+func (m *MockIItemService) Add(text string) (*model.Item, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Add", text)
-	ret0, _ := ret[0].(*model.ItemsResponse)
+	ret0, _ := ret[0].(*model.Item)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }

@@ -7,7 +7,7 @@ import (
 
 type IItemService interface {
 	Items() (*model.ItemsResponse, error)
-	Add(text string) (*model.ItemsResponse, error)
+	Add(text string) (*model.Item, error)
 }
 type ItemService struct {
 	Repository repository.IItem
@@ -23,14 +23,14 @@ func (s *ItemService) Items() (*model.ItemsResponse, error) {
 	return &m, err
 }
 
-func (s *ItemService) Add(text string) (*model.ItemsResponse, error) {
+func (s *ItemService) Add(text string) (*model.Item, error) {
 	items, _ := s.Repository.GetAllItems()
 	itemId := len(items) + 1
 	itemToAdd := &model.Item{Id: itemId, Text: text}
 	item, err := s.Repository.Add(itemToAdd)
 
-	m := model.ItemsResponse{}
-	m = append(m, *item)
+	m := model.Item{}
+	m = *item
 
 	return &m, err
 }
