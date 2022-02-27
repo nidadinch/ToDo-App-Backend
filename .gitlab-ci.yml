@@ -43,6 +43,7 @@ deploy2test:
     - gcloud auth activate-service-account --key-file $GCLOUD_KEY_FILE
     - gcloud config set project backend-342522
     - gcloud config set compute/zone us-central1-a
+    - gcloud container clusters delete cluster-for-backend --zone us-central1-a --project backend-342522 --quiet
     - gcloud container clusters create cluster-for-backend --num-nodes=3
     - gcloud container clusters get-credentials cluster-for-backend
     - kubectl apply -f backend-secret.yaml
