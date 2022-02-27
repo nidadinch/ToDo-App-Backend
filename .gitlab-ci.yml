@@ -2,6 +2,7 @@ stages:
   - test
   - build
   - deploy
+  - destroy
 
 variables:
   BIN_NAME: to-do-app-backend
@@ -44,3 +45,11 @@ deploy:
     - gcloud container clusters create cluster-for-backend --num-nodes=3
     - gcloud container clusters get-credentials cluster-for-backend
     - kubectl apply -f backend-app.yaml
+ needs: 
+
+destroy: destroy
+stage: destroy
+image: google/cloud-sdk
+script:
+    - gcloud auth activate-service-account --key-file $GCLOUD_KEY_FILE
+    - gcloud container clusters delete cluster-for-backend --zone us-central1-a --project backend-342522 --quiet
