@@ -2,8 +2,6 @@ kind: Service
 apiVersion: v1
 metadata:
   name: backend-entrypoint
-  annotations:
-    kubernetes.io/ingress.global-static-ip-name: "web-static-ip"
 spec:
   selector:
     app: backend
