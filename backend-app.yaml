@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: registry.gitlab.com/nidadinch/todo-app-backend:lastest
+          image: registry.gitlab.com/nidadinch/todo-app-backend:latest
           resources:
             limits:
               memory: "128Mi"
