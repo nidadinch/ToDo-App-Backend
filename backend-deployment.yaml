@@ -13,7 +13,7 @@ spec:
         app: backend
     spec:
       imagePullSecrets:
-        - name: gitlab-registry-credentials
+        - name: registry-credentials
       containers:
         - name: backend
           image: registry.gitlab.com/nidadinch/to-do-app-backend:latest
@@ -23,16 +23,3 @@ spec:
               cpu: "300m"
           ports:
             - containerPort: 3000
----
-kind: Service
-apiVersion: v1
-metadata:
-  name: backend-entrypoint
-spec:
-  selector:
-    app: backend
-  type: LoadBalancer
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 3000
