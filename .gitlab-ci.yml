@@ -1,7 +1,7 @@
 stages:
   - test
   - build
-  - deploy
+  - deploy2test
 
 variables:
   BIN_NAME: to-do-app-backend
@@ -33,9 +33,11 @@ build:
       --context "${CI_PROJECT_DIR}"
       --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
       --destination "${CI_REGISTRY_IMAGE}:latest"
+  needs:
+    - test
 
-deploy:
-  stage: deploy
+deploy2test:
+  stage: deploy2test
   image: google/cloud-sdk
   script:
     - gcloud auth activate-service-account --key-file $GCLOUD_KEY_FILE
@@ -45,3 +47,5 @@ deploy:
     - kubectl apply -f backend-secret.yaml
     - kubectl apply -f backend-deployment.yaml
     - kubectl apply -f backend-service.yaml
+  needs:
+    - build
