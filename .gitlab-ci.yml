@@ -35,12 +35,12 @@ build:
       --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
       --destination "${CI_REGISTRY_IMAGE}:latest"
 
-destroy: destroy
-stage: destroy
-image: google/cloud-sdk
-script:
-  - gcloud auth activate-service-account --key-file $GCLOUD_KEY_FILE
-  - gcloud container clusters delete cluster-for-backend --zone us-central1-a --project backend-342522 --quiet
+destroy:
+  stage: destroy
+  image: google/cloud-sdk
+  script:
+    - gcloud auth activate-service-account --key-file $GCLOUD_KEY_FILE
+    - gcloud container clusters delete cluster-for-backend --zone us-central1-a --project backend-342522 --quiet
 
 deploy:
   stage: deploy
