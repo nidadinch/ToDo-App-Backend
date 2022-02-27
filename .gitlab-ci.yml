@@ -33,3 +33,15 @@ build:
       --context "${CI_PROJECT_DIR}"
       --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
       --destination "${CI_REGISTRY_IMAGE}:latest"
+
+deploy:
+  stage: deploy
+  image: google/cloud-sdk
+  script:
+    - echo $SERVICE_ACCOUNT | base64 -d > ~/encoded_serviceaccount.json
+    - gcloud auth activate-service-account --key-file ~/encoded_serviceaccount.json
+    - gcloud config set project backend-342522
+    - gcloud config set compute/zone us-central1-a
+    - gcloud container clusters create cluster-for-backend --num-nodes=3
+    - gcloud container clusters get-credentials cluster-for-backend
+    - kubectl apply -f backend-app.yaml
