@@ -1,7 +1,6 @@
 stages:
   - test
   - build
-  - destroy
   - deploy
 
 variables:
@@ -35,13 +34,6 @@ build:
       --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
       --destination "${CI_REGISTRY_IMAGE}:latest"
 
-destroy:
-  stage: destroy
-  image: google/cloud-sdk
-  script:
-    - gcloud auth activate-service-account --key-file $GCLOUD_KEY_FILE
-    - gcloud container clusters delete cluster-for-backend --zone us-central1-a --project backend-342522 --quiet
-
 deploy:
   stage: deploy
   image: google/cloud-sdk
@@ -49,7 +41,6 @@ deploy:
     - gcloud auth activate-service-account --key-file $GCLOUD_KEY_FILE
     - gcloud config set project backend-342522
     - gcloud config set compute/zone us-central1-a
-    - gcloud container clusters create cluster-for-backend --num-nodes=3
     - gcloud container clusters get-credentials cluster-for-backend
     - kubectl apply -f backend-secret.yaml
     - kubectl apply -f backend-deployment.yaml
