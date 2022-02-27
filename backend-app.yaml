@@ -12,6 +12,8 @@ spec:
       labels:
         app: backend
     spec:
+      imagePullSecrets:
+        - name: gitlab-registry-credentials
       containers:
         - name: backend
           image: registry.gitlab.com/nidadinch/to-do-app-backend:latest
