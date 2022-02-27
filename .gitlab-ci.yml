@@ -45,7 +45,7 @@ deploy:
     - gcloud container clusters create cluster-for-backend --num-nodes=3
     - gcloud container clusters get-credentials cluster-for-backend
     - kubectl apply -f backend-app.yaml
- needs: 
+ needs: destroy
 
 destroy: destroy
 stage: destroy
