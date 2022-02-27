@@ -51,4 +51,6 @@ deploy:
     - gcloud config set compute/zone us-central1-a
     - gcloud container clusters create cluster-for-backend --num-nodes=3
     - gcloud container clusters get-credentials cluster-for-backend
+    - kubectl create secret docker-registry gitlab-registry-credentials --docker-server=${CI_REGISTRY} --docker-username=${CI_DEPLOY_USERNAME} --docker-password=${CI_DEPLOY_PASSWORD}
+    - kubectl patch serviceaccount default -p "{\"imagePullSecrets\":[{\"name\":\"gitlab-registry-credentials\"}]}"
     - kubectl apply -f backend-app.yaml
