@@ -126,16 +126,18 @@ All dependencies can be found on package.json file. Also you can check the list:
 
 ## Pipeline
 
+![Adsız-2022-02-28-2121](/uploads/d0d089ee0b356cd58f614e5ea8bb376a/Adsız-2022-02-28-2121.png)
+
 Project has GitLab CI pipeline and it has several steps to get ready for deployment. 
 - Build & Test: Builds the project and runs all unit tests,
 - Dockerize: Generates a docker image to private gitlab registry
 - Deploy2Test: Configures Google Cloud Platform Kubernetes Engine. This step has 4 another configuration files named: 
-  backend-deployment.yaml
-  backend-ingress.yaml
-  backend-secret.yaml
-  backend-service.yaml
-For more information please check .gitlab-ci.yml file.
-Ingress has been used for assign a static ip to backend. 
+  * backend-deployment.yaml
+  * backend-ingress.yaml
+  * backend-secret.yaml
+  * backend-service.yaml
+
+Ingress has been used for assign a static ip to backend. For more information please check .gitlab-ci.yml file.
 
 This project contains a docker file that generates a docker image. For more information please check Dockerfile.
 
