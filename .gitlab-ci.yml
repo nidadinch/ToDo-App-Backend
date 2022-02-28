@@ -48,7 +48,7 @@ deploy2test:
     - gcloud container clusters get-credentials cluster-for-backend
     - kubectl apply -f backend-secret.yaml
     - kubectl apply -f backend-deployment.yaml
-    - kubectl apply -f backend-service.yaml
     - kubectl apply -f backend-ingress.yaml
+    - kubectl apply -f backend-service.yaml
   needs:
     - build
