@@ -1,4 +1,4 @@
-# To-Do App FrontEnd
+# To-Do App Backend
 
 This repository belongs to a To-Do App based on Golang. All project has been written by A-TDD approach.For more information about ATDD please check : https://bit.ly/3JmLA82. It has only one feature and  adds a new todo item to list. Live version can be found in: http://34.111.105.21 for frontend. 
 
