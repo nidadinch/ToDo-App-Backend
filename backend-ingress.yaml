@@ -4,14 +4,11 @@ metadata:
   name: backend-ingress
   annotations:
     kubernetes.io/ingress.global-static-ip-name: "web-static-ip"
+  labels:
+    app: backend
 spec:
-  rules:
-    - http:
-        paths:
-          - path: /*
-            pathType: Prefix
-            backend:
-              service:
-                name: backend-entrypoint
-                port:
-                  number: 80
+  defaultBackend:
+    service:
+      name: backend-entrypoint
+      port:
+        number: 80
