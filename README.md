@@ -57,6 +57,8 @@ This project has 3 Domain layer :
 
 ### The Diagram 
 
+![Project-Diagram](/uploads/2805056c7b7f12da342334034ec2b3d7/Adsız-2022-02-28-2121-2.png)
+
 ### Project Tree
 
 ```
